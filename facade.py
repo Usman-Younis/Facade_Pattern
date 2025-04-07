@@ -21,7 +21,7 @@ class Payment:
         
 class orderConfirmation:
     def confirm_order(self, order_id):
-        print(f"Order {order_id} has been confirmed.")
+        print(f"Order {order_id} has been confirmed. Order is on the way!")
     
 
 # Facade class
@@ -40,14 +40,16 @@ class FlowerShopFacade:
         self.selector.choose_flowers(occasion)
         self.bouquet_preparation.arrange_bouquet()
         self.packaging.wrap_bouquet()
-        self.delivery.deliver(address)
-        self.payment.process_payment(amount)
         self.orderConfirmation.confirm_order(order_id)
-        print("Flower delivery complete!")
+        self.payment.process_payment(amount)
+        self.delivery.deliver(address)
+        
+        
+        print("Flower delivery complete!\n")
 
 # Client
 if __name__ == "__main__":
     shop = FlowerShopFacade()
-    shop.send_flowers("birthday", "123 , hometown", "1000", "079369 \n")
-    shop.send_flowers("wedding", "456 , model town", "700", "123456 \n")
-    shop.send_flowers("graduation", "789 , block B", "500", "926404 \n")
+    shop.send_flowers("birthday", "123 , hometown", "1000", "079369")
+    shop.send_flowers("wedding", "456 , model town", "700", "123456 ")
+    shop.send_flowers("graduation", "789 , block B", "500", "926404")
