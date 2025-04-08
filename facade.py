@@ -48,8 +48,10 @@ class FlowerShopFacade:
         print("Flower delivery complete!\n")
 
 # Client
-if __name__ == "__main__":
-    shop = FlowerShopFacade()
-    shop.send_flowers("birthday", "123 , hometown", "1000", "079369")
-    shop.send_flowers("wedding", "456 , model town", "700", "123456 ")
-    shop.send_flowers("graduation", "789 , block B", "500", "926404")
+#if __name__ == "__main__":
+shop = FlowerShopFacade()
+shop.send_flowers("birthday", "123 , hometown", "1000", "079369")
+shop.send_flowers("wedding", "456 , model town", "700", "123456 ")
+shop.send_flowers("graduation", "789 , block B", "500", "926404")
+
+print("All the ''sub system'' classes should be the concrete classes for an abstract class. Currently they are implementing different functionalities. \n\n")
